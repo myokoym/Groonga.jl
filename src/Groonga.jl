@@ -1,5 +1,9 @@
 module Groonga
 
-# package code goes here
+using Compat
+
+include("../deps/deps.jl")
+
+@assert isdefined(:libgroonga)
 
 end # module
