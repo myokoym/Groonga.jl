@@ -7,6 +7,7 @@ context = Groonga.ctx_open()
 @test Groonga.default_encoding() == "utf8"
 
 @test_throws ErrorException Groonga.db_create(context, "a/b/c/d/e")
+@test_throws ErrorException Groonga.db_open(context, "a/b/c/d/e")
 
 dir = mktempdir()
 database = Groonga.db_create(context, "$dir/test.db")
