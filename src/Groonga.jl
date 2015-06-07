@@ -6,15 +6,8 @@ include("../deps/deps.jl")
 
 @assert isdefined(:libgroonga)
 
-function init()
-  ccall((:grn_init, libgroonga),
-        Void, ())
-end
-
-function fin()
-  ccall((:grn_fin, libgroonga),
-        Void, ())
-end
+init() = ccall((:grn_init, libgroonga), Void, ())
+fin() = ccall((:grn_fin, libgroonga), Void, ())
 
 include("context.jl")
 include("database.jl")
