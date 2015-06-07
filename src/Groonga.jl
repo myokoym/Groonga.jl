@@ -16,4 +16,6 @@ function fin()
         Void, ())
 end
 
+include("encoding.jl")
+
 end # module
