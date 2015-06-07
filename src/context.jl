@@ -42,5 +42,8 @@ function ctx_recv(context)
         str,
         str_len,
         flags)
+  if str[] == C_NULL
+    return nothing
+  end
   bytestring(str[], str_len[])
 end
