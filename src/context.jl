@@ -42,5 +42,5 @@ function ctx_recv(context)
         str,
         str_len,
         flags)
-  bytestring(str[])
+  bytestring(str[], str_len[])
 end
