@@ -1,6 +1,21 @@
+function ctx_init(context, flags=0)
+  ccall((:grn_ctx_init, libgroonga),
+        Ptr{Void}, (Ptr{Void}, Int,), context, flags)
+end
+
+function ctx_fin(context, flags=0)
+  ccall((:grn_ctx_fin, libgroonga),
+        Ptr{Void}, (Ptr{Void}, Int,), context, flags)
+end
+
 function ctx_open(flags=0)
   ccall((:grn_ctx_open, libgroonga),
         Ptr{Void}, (Int,), flags)
+end
+
+function ctx_use(context, database)
+  ccall((:grn_ctx_use, libgroonga),
+        Ptr{Void}, (Ptr{Void}, Ptr{Void},), context, database)
 end
 
 function ctx_db(context)
