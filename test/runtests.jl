@@ -13,4 +13,7 @@ dir = mktempdir()
 database = Groonga.db_create(context, "$dir/test.db")
 println(Groonga.execute_command(context, "status"))
 
+Groonga.execute_command(context, "table_create --name Site --flags TABLE_HASH_KEY --key_type ShortText")
+println(Groonga.execute_command(context, "select --table Site"))
+
 Groonga.fin()

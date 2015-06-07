@@ -33,11 +33,11 @@ function ctx_recv(context)
   end
 
   str = Array(Ptr{UInt8})
-  str_len = Array(Int)
+  str_len = Array(Int32)
   flags = Array(Int)
   ccall((:grn_ctx_recv, libgroonga),
         Void,
-        (Ptr{Void}, Ptr{Ptr{UInt8}}, Ptr{Int}, Ptr{Int}),
+        (Ptr{Void}, Ptr{Ptr{UInt8}}, Ptr{Int32}, Ptr{Int}),
         context,
         str,
         str_len,
